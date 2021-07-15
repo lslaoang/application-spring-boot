@@ -3,7 +3,6 @@ package com.example.systemlibrary.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,19 +10,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.systemlibrary.model.Books;
 import com.example.systemlibrary.service.BookService;
 
-@Controller
+@RestController
 public class BooksController {
 	
 	@Autowired
 	BookService booksService;
 	
 	
-	@RequestMapping("/display") public String DisplayThis() { return "You got me"; }
+	@RequestMapping(value = "/display") public String DisplayThis() { return "You got me"; }
 	 
 	
 	@GetMapping("/book")
@@ -43,7 +42,7 @@ public class BooksController {
 	@PostMapping("/books")
 	private int saveBooks(@RequestBody Books books) {
 		booksService.saveOrUpdate(books);
-		return books.getBookID();
+		return books.getBookid();
 	}
 	
 	@PutMapping("/books") 

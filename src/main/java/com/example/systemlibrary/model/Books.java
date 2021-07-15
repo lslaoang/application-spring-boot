@@ -11,7 +11,7 @@ public class Books {
 	
 	@Id
 	@Column	
-	private int bookID;
+	private int bookid;
 	
 	@Column	
 	private String bookName;
@@ -23,11 +23,11 @@ public class Books {
 	private String bookAuthor;
 	
 
-	public int getBookID() {
-		return bookID;
+	public int getBookid() {
+		return bookid;
 	}
-	public void setBookID(int bookID) {
-		this.bookID = bookID;
+	public void setBookid(int bookID) {
+		this.bookid = bookID;
 	}
 	public String getBookName() {
 		return bookName;
